@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "MyNetworkingPackage",
+    name: "apiclient",
     platforms: [
         .iOS(.v14)
     ],
     products: [
         .library(
-            name: "MyNetworkingPackage",
-            targets: ["MyNetworkingPackage"]),
+            name: "apiclient",
+            targets: ["apiclient"]),
     ],
     dependencies: [
         // Example: Alamofire as a dependency
@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "MyNetworkingPackage",
+            name: "apiclient",
             dependencies: ["Alamofire"], path: "Sources"),
 //        .testTarget(
 //            name: "MyNetworkingPackageTests",

@@ -8,7 +8,12 @@ public class APIClient {
 
     public func getRequest(_ url: String, completion: @escaping (Result<Data, Error>) -> Void) {
         AF.request(url).responseData { response in
-            completion(response.result)
+            switch response.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let afError):
+                completion(.failure(afError))
+            }
         }
     }
 }
